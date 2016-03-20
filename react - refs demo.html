@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <script src="https://fb.me/react-0.14.7.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js'></script>
+    <title>React Hello World</title>
+  </head>
+  <body>
+    <div id='container'></div>
+    <script type='text/babel'>
+      var CheckboxComponent = React.createClass({
+        getInitialState: function(){
+          return {click : 0};
+        },
+        handleClick: function() {
+          var refVal = this.refs.clickButton.getDOMNode().value;
+          var refType = this.refs.clickButton.getDOMNode().type;
+          alert('ref Value='+refVal);
+          alert('ref type='+refType);
+          this.state.click = this.state.click + 1;
+          this.setState({click: this.state.click});
+        },
+        handleReset: function() {
+          this.state.click = 0;
+          this.setState({click: this.state.click});
+      },
+        render: function(){
+
+          var count;
+          if(this.state.click === 0){
+            count = 0;
+          }
+          else{
+            count = this.state.click;
+          }
+          return <div>
+          <h1>{this.props.children}</h1>
+            <input type="button" onClick={this.handleClick} ref="clickButton" value="Click me"></input>
+            <button onClick={this.handleReset}>Reset</button>
+            <p>Click count {count}. </p>
+          </div>
+        }
+    });
+    React.render( <CheckboxComponent >React State Demo</CheckboxComponent>, document.body);
+    </script>
+  </body>
+</html>
