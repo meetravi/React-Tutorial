@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Including the latest React Production minified Version -->
+    <script src="https://fb.me/react-0.14.7.min.js"></script>
+    <title>React Hello World</title>
+  </head>
+  <body>
+    <div id='container'></div>
+    <script>
+
+    // Javascript Create Element method Reference - https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
+    // React render method and createElement reference - https://facebook.github.io/react/docs/top-level-api.html
+
+    //Render a ReactElement into the DOM in the supplied container and return a reference to the component
+    // (or returns null for stateless components).
+
+    //Create and return a new ReactElement of the given type.
+    //The type argument can be either an html tag name string (eg. 'div', 'span', etc), or
+    // a ReactClass (created via React.createClass).
+
+        React.render(React.createElement('p', null ,'Hello World!!! Welcome to React JS'),
+        document.getElementById('container'));
+        
+
+
+    </script>
+
+  </body>
+</html>
